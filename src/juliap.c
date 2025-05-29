@@ -20,7 +20,7 @@ void compute_julia_set(double xmin, double xmax, double ymin, double ymax,
     int nit;
     double complex z;
 
-    #pragma omp parallel for collapse(2) schedule(runtime)
+    #pragma omp parallel for collapse(2) schedule(runtime) private(nit,z)
     for(i=0; i<im_width; i++) {
         for(j=0; j<im_height; j++) {
             nit = 0;
